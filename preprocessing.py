@@ -4,6 +4,7 @@ import csv
 from fuzzywuzzy import fuzz
 import pickle
 import sys
+import re
 
 sys.setrecursionlimit(2147000000)
 datapath = "C:\\dblp.xml"
@@ -86,6 +87,8 @@ class person:
   prestige:str
   def __init__(self):
       self.name = None
+      self.institute = None
+      self.prestige = None
       self.publications = []
   def add_publications(self,object):
       self.publications.append(object)
