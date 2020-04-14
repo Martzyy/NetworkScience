@@ -222,7 +222,7 @@ def auto_add_publication(articled:article, networked:network):
    new_publication.set_title(articled.title)
    new_publication.set_tier(articled.tier)
    new_publication.set_year(articled.year)
-   new_publication.set_venue(re.search('/(.*)/', articled.crossref))
+   new_publication.set_venue(re.search('/(.*)/', articled.crossref).group(1))
    for author in articled.authors:
        for nauthor in networked.authors:
            if nauthor.name == author:
