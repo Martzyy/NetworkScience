@@ -274,4 +274,3 @@ def generate_data():
     final_network.save()
 
 configuration = load_configuration(config)
-© 2020 GitHub, Inc.
