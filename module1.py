@@ -67,12 +67,17 @@ class publication:
    def set_tier(self,tier:int):
        self.tier = tier
        return
+   def set_venue(self,venue:str):
+       self.venue = venue
+       return
  
 class person:
    name:str
+   institute:institute
    publications:[]
    def __init__(self):
        self.name = None
+       self.institute = None
        self.publications = []
    def add_publications(self,object):
        self.publications.append(object)
