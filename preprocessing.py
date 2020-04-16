@@ -143,6 +143,7 @@ def parse_data_article(datapath:str):
  scount = 0;
  for event,elem in itertree: #read first line
      if elem.tag == 'inproceedings' or elem.tag == 'phdthesis' or elem.tag == 'mastersthesis':
+         del(previous)
          previous = article()
      if previous != None:
          if elem.tag == 'author':
