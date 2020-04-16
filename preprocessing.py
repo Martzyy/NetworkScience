@@ -2,7 +2,7 @@ from lxml import etree
 import re
 import csv
 from fuzzywuzzy import fuzz
-import pickle
+import marshal
 import sys
 
 sys.setrecursionlimit(2147000000)
@@ -46,7 +46,7 @@ class network:
       return
   def save(self):
       with open(b'network.p',"wb") as wf:
-        pickle.dump(self, wf, protocol = pickle.HIGHEST_PROTOCOL)
+        marshal.dump(self, wf, protocol = 5)
       wf.close()
       return
 
@@ -77,7 +77,7 @@ class publication:
 class person:
   name:str
   publications:[]
-  institute:str
+  instituted:str
   prestige:str
   def __init__(self):
       self.name = None
@@ -91,7 +91,7 @@ class person:
       self.name = name
       return
   def set_institute(self, institute):
-       self.institute = institute
+       self.instituted = institute
        return
   def set_prestige(self,prestige:str):
       self.prestige = prestige
