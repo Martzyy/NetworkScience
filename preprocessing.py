@@ -2,7 +2,7 @@ from lxml import etree
 import re
 import csv
 from fuzzywuzzy import fuzz
-import marshal
+import pickle
 import sys
 
 sys.setrecursionlimit(2147000000)
@@ -45,8 +45,8 @@ class network:
       self.institute.append(institute)
       return
   def save(self):
-      with open(b'network.p',"wb") as wf:
-        marshal.dump()
+      with open(b'network.json',"wb") as wf:
+        pickle.dump(self, wf)
       wf.close()
       return
 
