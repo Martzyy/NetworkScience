@@ -46,7 +46,7 @@ class network:
       return
   def save(self):
       with open(b'network.p',"wb") as wf:
-        marshal.dump(self, wf, protocol = 5)
+        marshal.dump()
       wf.close()
       return
 
