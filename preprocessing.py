@@ -169,6 +169,7 @@ def parse_data_article(datapath:str):
                auto_add_institute(previous, networked)
                previous = None
      elem.clear()
+     #count here
  return networked
 
 def load_configuration(file_location:str):
