@@ -155,7 +155,7 @@ def parse_data_article(datapath:str):
          elif elem.tag == 'crossref':
              previous.add_crossref(elem.text)
              article_tier(previous,configuration)
-             if previous.tier >= 1:
+             if previous.tier >= 1 and count <= 5000:
                    count += 1
                    print(str(count)+" articles parsed.")
                    auto_add_authors(previous,networked)
