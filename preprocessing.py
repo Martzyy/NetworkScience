@@ -45,7 +45,7 @@ class network:
       self.institute.append(institute)
       return
   def save(self):
-      with open(b'network.json',"wb") as wf:
+      with open(b'network.p',"wb") as wf:
         pickle.dump(self, wf)
       wf.close()
       return
@@ -81,7 +81,7 @@ class person:
   prestige:str
   def __init__(self):
       self.name = None
-      self.institute = None
+      self.instituted = None
       self.prestige = None
       self.publications = []
   def add_publications(self,object):
@@ -268,6 +268,7 @@ def auto_add_institute(articled:article, networked:network):
                                new_institute.set_prestige(row["wworld_rank"])
                                fuzz_ratio_init = val
                    networked.add_institute(new_institute)
+                   nauthor.set_institute(new_institute)
    csvfile.close()
    return
  
